@@ -1,0 +1,9 @@
+~ start
+Bobcat: [[Hola|Yo|Ni hao]], welcome to my dialogue!
+Bobcat: What would you like to eat? No wrong answers here.
+- Hamburger
+	Bobcat: You got it, hamburger coming up.
+- Pizza
+	Bobcat: This is actually the correct choice, lmao.
+Bobcat: For more information see the online documentation.
+=> END

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bawvgd22o50q8"]
+
+[ext_resource type="Script" uid="uid://cfhhg862c57g7" path="res://diablo.gd" id="1_pwxiu"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="2_d686h"]
+[ext_resource type="Texture2D" uid="uid://beplk7lnru5nc" path="res://friend.png" id="2_pwxiu"]
+[ext_resource type="Resource" uid="uid://pfmyp8b08rwi" path="res://diablo_dialogue.dialogue" id="3_pwxiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb0p4"]
+atlas = ExtResource("2_pwxiu")
+region = Rect2(0, 0, 64, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d686h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb0p4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxiu"]
+size = Vector2(48, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d686h"]
+size = Vector2(20, 149)
+
+[node name="Diablo" type="CharacterBody2D" unique_id=182891957]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_pwxiu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1774845263]
+sprite_frames = SubResource("SpriteFrames_d686h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972290078]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_pwxiu")
+
+[node name="TalkDiablo" type="Area2D" parent="." unique_id=1837965728]
+collision_layer = 2
+script = ExtResource("2_d686h")
+dialogue_resource = ExtResource("3_pwxiu")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkDiablo" unique_id=1563750324]
+position = Vector2(16, 0.5)
+shape = SubResource("RectangleShape2D_d686h")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qopc4raccr1k"
-path="res://.godot/imported/bobcat_walking.png-e67feca9a061e6a0f1e8aad95f07d169.ctex"
+uid="uid://dehsyb2g8cyvf"
+path="res://.godot/imported/devil_cat_left_facing.png-bdf55ab95120cd1e3dd255c345c724d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bobcat_walking.png"
-dest_files=["res://.godot/imported/bobcat_walking.png-e67feca9a061e6a0f1e8aad95f07d169.ctex"]
+source_file="res://Sprites/devil_cat_left_facing.png"
+dest_files=["res://.godot/imported/devil_cat_left_facing.png-bdf55ab95120cd1e3dd255c345c724d2.ctex"]
 
 [params]
 

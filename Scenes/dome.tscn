@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bycogfdiuq6m7"]
+
+[ext_resource type="Texture2D" uid="uid://b7snlfe23m1gf" path="res://Sprites/dome3.png" id="1_al3qe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1jgq"]
+size = Vector2(141, 66.5)
+
+[node name="Dome" type="StaticBody2D" unique_id=1144924836]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054491232]
+texture = ExtResource("1_al3qe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337371976]
+position = Vector2(-0.5, -31.75)
+shape = SubResource("RectangleShape2D_p1jgq")

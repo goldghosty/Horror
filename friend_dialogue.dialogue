@@ -1,0 +1,13 @@
+~ start
+if Global.has_met_friend == false
+	Friend: [[Hi|Hello|Howdy]], nice to meet you! I'm Diablo!
+	Friend: Whatcha doing here?
+	- Nothing...
+		Friend: Okay, keep your secrets!
+	- Just chilling
+		Friend: Are you cold? Do you need a sweater?
+	Friend: : Well, see ya soon I hope.
+	set Global.has_met_friend = true
+else
+	Friend: Something else you need?
+=> END

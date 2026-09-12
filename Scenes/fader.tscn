@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bxx0apjbcul5m"]
+
+[ext_resource type="Script" uid="uid://dml1f7hp0ny88" path="res://Scripts/fader.gd" id="1_cgo47"]
+
+[node name="Fader" type="CanvasLayer" unique_id=1751231789]
+script = ExtResource("1_cgo47")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1942174822]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

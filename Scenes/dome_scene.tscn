@@ -1,10 +1,32 @@
 [gd_scene format=3 uid="uid://dfbvmerhmfk2l"]
 
-[ext_resource type="PackedScene" uid="uid://b78tsi14ugvfg" path="res://Scenes/player_small.tscn" id="1_htjd5"]
 [ext_resource type="Script" uid="uid://el4ktp8bel2n" path="res://Scenes/dome_scene.gd" id="1_t3woy"]
+[ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_t3woy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eqae"]
+size = Vector2(637, 40)
 
 [node name="DomeScene" type="Node2D" unique_id=1263559294]
 script = ExtResource("1_t3woy")
 
-[node name="PlayerSmall" parent="." unique_id=1121856085 instance=ExtResource("1_htjd5")]
-position = Vector2(171, 199)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1866796433]
+offset_right = 638.0
+offset_bottom = 358.0
+color = Color(1, 0.019607844, 0, 1)
+
+[node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_t3woy")]
+z_index = 1
+position = Vector2(54, 220)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1585880999]
+collision_layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=164409376]
+offset_left = 1.0
+offset_top = 318.0
+offset_right = 637.0
+offset_bottom = 358.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=240671846]
+position = Vector2(318.5, 338)
+shape = SubResource("RectangleShape2D_0eqae")

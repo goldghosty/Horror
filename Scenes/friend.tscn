@@ -48,3 +48,5 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkFriend" unique_id=1563750324]
 position = Vector2(16, 0.5)
 shape = SubResource("RectangleShape2D_d686h")
+
+[connection signal="body_entered" from="TalkFriend" to="." method="_on_talk_friend_body_entered"]

@@ -1,32 +1,110 @@
 [gd_scene format=3 uid="uid://dfbvmerhmfk2l"]
 
-[ext_resource type="Script" uid="uid://el4ktp8bel2n" path="res://Scenes/dome_scene.gd" id="1_t3woy"]
+[ext_resource type="Script" uid="uid://el4ktp8bel2n" path="res://Scripts/dome_scene.gd" id="1_t3woy"]
 [ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_t3woy"]
+[ext_resource type="Script" uid="uid://dvwejidvgiisg" path="res://Scenes/sign.gd" id="3_bf34k"]
+[ext_resource type="Shader" uid="uid://dshna4sfdrw20" path="res://Scenes/dome_scene.gdshader" id="4_nlxwa"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="4_urco1"]
+[ext_resource type="Texture2D" uid="uid://b3ujk7wnvvb7l" path="res://Sprites/dome_background.png" id="5_nlxwa"]
+[ext_resource type="Texture2D" uid="uid://bd2gjxvsusj48" path="res://Sprites/dome_desk.png" id="5_y7eah"]
+[ext_resource type="Resource" uid="uid://bw1xrmbxuim4n" path="res://dome_sign.dialogue" id="6_hdbij"]
+[ext_resource type="Texture2D" uid="uid://bksyqgkfhslla" path="res://Sprites/sign.png" id="6_y7eah"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eqae"]
-size = Vector2(637, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lql3v"]
+size = Vector2(650, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf34k"]
+size = Vector2(49, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdbij"]
+size = Vector2(57, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urco1"]
+size = Vector2(89, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bf34k"]
+shader = ExtResource("4_nlxwa")
+shader_parameter/angle = -0.005
+shader_parameter/position = -0.065
+shader_parameter/spread = 0.5150000244625
+shader_parameter/cutoff = 0.11300005286749992
+shader_parameter/falloff = 0.178000008455
+shader_parameter/edge_fade = 0.12800000608
+shader_parameter/speed = 0.84
+shader_parameter/ray1_density = 7.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.34400001634
+shader_parameter/ray_color = Color(1, 0.69803923, 0.29411766, 0.5294118)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+shader_parameter/pixelation = 100.0
+shader_parameter/quantize_colors = true
+shader_parameter/color_levels = 14
+shader_parameter/dither = false
+shader_parameter/dither_strength = 0.3790000180025
+shader_parameter/opacity = 1.0
 
 [node name="DomeScene" type="Node2D" unique_id=1263559294]
 script = ExtResource("1_t3woy")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1866796433]
-offset_right = 638.0
-offset_bottom = 358.0
-color = Color(1, 0.019607844, 0, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1789323497]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("5_nlxwa")
 
-[node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_t3woy")]
-z_index = 1
-position = Vector2(54, 220)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1585880999]
+[node name="Floor" type="StaticBody2D" parent="." unique_id=84476224]
+position = Vector2(0, 330)
 collision_layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=164409376]
-offset_left = 1.0
-offset_top = 318.0
-offset_right = 637.0
-offset_bottom = 358.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=409738969]
+position = Vector2(320, 19.5)
+shape = SubResource("RectangleShape2D_lql3v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=240671846]
-position = Vector2(318.5, 338)
-shape = SubResource("RectangleShape2D_0eqae")
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=1985707740]
+offset_right = 640.0
+offset_bottom = 35.0
+color = Color(0.42352942, 0.15686275, 0.20392157, 1)
+
+[node name="Sign" type="Area2D" parent="." unique_id=1944877597]
+position = Vector2(239, 264)
+script = ExtResource("3_bf34k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=981177239]
+texture = ExtResource("6_y7eah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign" unique_id=796663877]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_bf34k")
+
+[node name="ReadSign" type="Area2D" parent="Sign" unique_id=806492221]
+collision_layer = 16
+script = ExtResource("4_urco1")
+dialogue_resource = ExtResource("6_hdbij")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/ReadSign" unique_id=1575135337]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_hdbij")
+
+[node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_t3woy")]
+position = Vector2(54, 220)
+
+[node name="Desk" type="StaticBody2D" parent="." unique_id=1800981201]
+position = Vector2(382, 290)
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Desk" unique_id=1572424396]
+texture = ExtResource("5_y7eah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk" unique_id=1002030535]
+position = Vector2(-0.5, -30)
+shape = SubResource("RectangleShape2D_urco1")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1381226914]
+material = SubResource("ShaderMaterial_bf34k")
+offset_left = 226.0
+offset_right = 557.0
+offset_bottom = 367.0
+
+[connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]

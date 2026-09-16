@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yacyiega2srp" path="res://Sprites/grass.png" id="3_w7joo"]
 [ext_resource type="Texture2D" uid="uid://boq3wql7pg4qb" path="res://Sprites/paths2.png" id="4_1rbi2"]
 [ext_resource type="Texture2D" uid="uid://b7snlfe23m1gf" path="res://Sprites/dome3.png" id="4_pg8f8"]
-[ext_resource type="Script" uid="uid://dxpp84lj0kl6r" path="res://Scenes/dome_entrance.gd" id="5_w7joo"]
+[ext_resource type="Script" uid="uid://dxpp84lj0kl6r" path="res://Scripts/dome_entrance.gd" id="5_w7joo"]
 [ext_resource type="Texture2D" uid="uid://cbewymdrtcyw1" path="res://Sprites/dome4.png" id="6_acm47"]
 [ext_resource type="Texture2D" uid="uid://dvp4xiwluxmyc" path="res://Sprites/newestdome.png" id="7_qgucq"]
 

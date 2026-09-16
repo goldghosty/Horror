@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw2mnvomcnse4" path="res://Scripts/bobcat.gd" id="1_ufort"]
 [ext_resource type="Texture2D" uid="uid://kmu7oaaulws7" path="res://Sprites/dude_walk.png" id="2_ufort"]
+[ext_resource type="FontFile" uid="uid://dqcreh7iywue0" path="res://Fonts/Perfect DOS VGA 437.ttf" id="3_a33hh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufort"]
 atlas = ExtResource("2_ufort")
@@ -61,8 +62,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v820v"]
 size = Vector2(42, 163)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jsm"]
+size = Vector2(64, 160)
+
 [node name="Player" type="CharacterBody2D" unique_id=1121856085 groups=["Player"]]
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_ufort")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=19914070]
@@ -73,3 +77,22 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698855606]
 position = Vector2(-4, 5.5)
 shape = SubResource("RectangleShape2D_v820v")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=565940498]
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1157285457]
+position = Vector2(-3, 6)
+shape = SubResource("RectangleShape2D_c1jsm")
+
+[node name="Label" type="Label" parent="." unique_id=669237373]
+visible = false
+offset_left = 29.0
+offset_top = -84.0
+offset_right = 117.0
+offset_bottom = -61.0
+theme_override_fonts/font = ExtResource("3_a33hh")
+text = "?"
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]

@@ -5,9 +5,10 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var in_talk_area = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") and in_talk_area:
 		talk_friend.action()
 
 func _physics_process(delta: float) -> void:
@@ -18,3 +19,8 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+
+
+func _on_talk_friend_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		in_talk_area = true

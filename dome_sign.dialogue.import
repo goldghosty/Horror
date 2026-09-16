@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bw1xrmbxuim4n"
+path="res://.godot/imported/dome_sign.dialogue-c9339b1d6ee94c1a3069fdb3f691e1c7.tres"
+
+[deps]
+
+source_file="res://dome_sign.dialogue"
+dest_files=["res://.godot/imported/dome_sign.dialogue-c9339b1d6ee94c1a3069fdb3f691e1c7.tres"]
+
+[params]
+
+defaults=true

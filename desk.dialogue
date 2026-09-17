@@ -1,0 +1,35 @@
+~ start
+if Global.dome_offering_complete == false
+	You see a service bell and a small bowl on a wooden table.
+	if Global.left_dome_offering == false
+		- Leave offering
+			You: They must run on a donation honor system.
+			You: Let's see what I've got...
+			- Leave a quarter
+				set Global.left_dome_offering = true
+			- Leave a dollar
+				set Global.left_dome_offering = true
+		- Ring bell
+			You ring the bell. Sounds like a regular bell.
+			set Global.bell_before_offering = true
+			=> start
+
+	if Global.left_dome_offering == true and Global.bell_before_offering == false
+		- Ring bell
+			You ring the bell. It creates a long, rolling tone. 
+			set Global.dome_offering_complete = true
+			=> END
+		
+	if Global.left_dome_offering == true and Global.bell_before_offering == true
+		- Ring bell
+			You ring the bell. 
+			This time it creates a long, rolling tone.
+			How did they do that?
+			set Global.dome_offering_complete = true
+			=> END
+	
+else
+	There's nothing else to do.
+	
+=> END
+

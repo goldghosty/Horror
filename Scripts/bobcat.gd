@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 func _on_interaction_area_area_entered(area: Area2D) -> void:
 	if area.has_method("action"):
 		current_actionable = area
+		print(current_actionable)
 		label.visible = true
 		
 

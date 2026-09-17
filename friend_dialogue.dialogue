@@ -1,9 +1,8 @@
 ~ start
 if Global.has_met_friend == false
-	Player: Are you going to come in with me?
-	Friend: I don't know, this place is kind of creeping me out.
-	Player: I'll go check to see if they're open. I'll be right back, okay?
-	Friend: Yeah, I'll wait in the car. 
+	Friend: This place is kind of creeping me out. 
+	You: I'll go inside and see if they are actually open.
+	Friend: Okay, I'll just wait here for a sec.
 	set Global.has_met_friend = true
 else
 	Friend: Something else you need?

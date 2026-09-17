@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqwryj238liha" path="res://balloon.gd" id="1_4emby"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="FontFile" uid="uid://d3ybeyhbqqps7" path="res://Fonts/dogicapixel.ttf" id="2_jj3vs"]
 [ext_resource type="FontFile" uid="uid://dqcreh7iywue0" path="res://Fonts/Perfect DOS VGA 437.ttf" id="2_wxbh2"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -200,7 +199,7 @@ theme_override_colors/font_color = Color(0.8745098, 0.03137255, 0.8745098, 1)
 theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.14509805, 1)
 theme_override_colors/font_pressed_color = Color(0.03529412, 0.078431375, 1, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.06666667, 1)
-theme_override_fonts/font = ExtResource("2_jj3vs")
+theme_override_fonts/font = ExtResource("2_wxbh2")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jj3vs")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wxbh2")

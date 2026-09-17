@@ -27,6 +27,9 @@ size = Vector2(89, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_df323"]
 size = Vector2(44, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn5eh"]
+size = Vector2(16, 387)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bf34k"]
 shader = ExtResource("4_nlxwa")
 shader_parameter/angle = -0.005
@@ -50,6 +53,7 @@ shader_parameter/dither_strength = 0.3790000180025
 shader_parameter/opacity = 1.0
 
 [node name="DomeScene" type="Node2D" unique_id=1263559294]
+y_sort_enabled = true
 script = ExtResource("1_t3woy")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1789323497]
@@ -58,7 +62,7 @@ offset_bottom = 360.0
 texture = ExtResource("5_nlxwa")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=84476224]
-position = Vector2(0, 330)
+position = Vector2(0, 345)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=409738969]
@@ -71,7 +75,7 @@ offset_bottom = 35.0
 color = Color(0.42352942, 0.15686275, 0.20392157, 1)
 
 [node name="Sign" type="Area2D" parent="." unique_id=1944877597]
-position = Vector2(204, 261)
+position = Vector2(256, 261)
 script = ExtResource("3_bf34k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=981177239]
@@ -93,10 +97,11 @@ position = Vector2(-0.5, -7)
 shape = SubResource("RectangleShape2D_hdbij")
 
 [node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_t3woy")]
+z_index = 1
 position = Vector2(54, 220)
 
 [node name="Desk" type="StaticBody2D" parent="." unique_id=1800981201]
-position = Vector2(382, 290)
+position = Vector2(426, 276)
 collision_layer = 16
 script = ExtResource("8_rn5eh")
 
@@ -104,7 +109,7 @@ script = ExtResource("8_rn5eh")
 texture = ExtResource("8_hdbij")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk" unique_id=1002030535]
-position = Vector2(-4.5, -30)
+position = Vector2(-4.5, -43)
 shape = SubResource("RectangleShape2D_urco1")
 
 [node name="Desk_Interact" type="Area2D" parent="Desk" unique_id=1322042943]
@@ -118,11 +123,20 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 position = Vector2(-37, -31.5)
 shape = SubResource("RectangleShape2D_df323")
 
+[node name="InvisibleWallRight" type="StaticBody2D" parent="." unique_id=460625527]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWallRight" unique_id=1653426068]
+position = Vector2(639, 186)
+shape = SubResource("RectangleShape2D_rn5eh")
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1381226914]
+z_index = 2
 material = SubResource("ShaderMaterial_bf34k")
-offset_left = 226.0
-offset_right = 557.0
-offset_bottom = 367.0
+offset_left = 273.0
+offset_top = -1.0
+offset_right = 604.0
+offset_bottom = 366.0
 
 [connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
 [connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]

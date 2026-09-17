@@ -6,8 +6,10 @@ if Global.dome_offering_complete == false
 			You: They must run on a donation honor system.
 			You: Let's see what I've got...
 			- Leave a quarter
+				You: Well, it's not much, but it's something.
 				set Global.left_dome_offering = true
 			- Leave a dollar
+				You: Hopefully this is helpful.
 				set Global.left_dome_offering = true
 		- Ring bell
 			You ring the bell. Sounds like a regular bell.

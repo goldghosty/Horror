@@ -75,7 +75,7 @@ offset_bottom = 35.0
 color = Color(0.42352942, 0.15686275, 0.20392157, 1)
 
 [node name="Sign" type="Area2D" parent="." unique_id=1944877597]
-position = Vector2(256, 261)
+position = Vector2(161, 261)
 script = ExtResource("3_bf34k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=981177239]

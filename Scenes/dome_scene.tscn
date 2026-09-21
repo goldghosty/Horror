@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dfbvmerhmfk2l"]
+[gd_scene format=4 uid="uid://dfbvmerhmfk2l"]
 
 [ext_resource type="Script" uid="uid://el4ktp8bel2n" path="res://Scripts/dome_scene.gd" id="1_t3woy"]
 [ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_t3woy"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bu83fnp24rnl0" path="res://Sprites/new_desk.png" id="8_hdbij"]
 [ext_resource type="Script" uid="uid://w07jq52w54s7" path="res://Scenes/desk.gd" id="8_rn5eh"]
 [ext_resource type="Resource" uid="uid://b3uvd27k406yv" path="res://desk.dialogue" id="9_df323"]
+[ext_resource type="Texture2D" uid="uid://cq7lumt0pgbus" path="res://Sprites/hole.png" id="12_83fkt"]
+[ext_resource type="Resource" uid="uid://b0xwy10s8jb1c" path="res://wall_art.dialogue" id="13_7n4px"]
+[ext_resource type="Script" uid="uid://buc2uiemjc5sm" path="res://Scenes/wall_art.gd" id="13_vximg"]
+[ext_resource type="Script" uid="uid://jilwpqsy0g3g" path="res://Scenes/front_exit.gd" id="15_u82jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lql3v"]
 size = Vector2(650, 39)
@@ -52,6 +56,31 @@ shader_parameter/dither = false
 shader_parameter/dither_strength = 0.3790000180025
 shader_parameter/opacity = 1.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n4px"]
+texture = ExtResource("12_83fkt")
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vximg"]
+sources/0 = SubResource("TileSetAtlasSource_7n4px")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vximg"]
+size = Vector2(64, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u82jn"]
+size = Vector2(60, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbi6v"]
+size = Vector2(22, 156)
+
 [node name="DomeScene" type="Node2D" unique_id=1263559294]
 y_sort_enabled = true
 script = ExtResource("1_t3woy")
@@ -75,7 +104,7 @@ offset_bottom = 35.0
 color = Color(0.42352942, 0.15686275, 0.20392157, 1)
 
 [node name="Sign" type="Area2D" parent="." unique_id=1944877597]
-position = Vector2(161, 261)
+position = Vector2(120, 261)
 script = ExtResource("3_bf34k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=981177239]
@@ -98,7 +127,7 @@ shape = SubResource("RectangleShape2D_hdbij")
 
 [node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_t3woy")]
 z_index = 1
-position = Vector2(54, 220)
+position = Vector2(49, 228)
 
 [node name="Desk" type="StaticBody2D" parent="." unique_id=1800981201]
 position = Vector2(426, 276)
@@ -138,7 +167,43 @@ offset_top = -1.0
 offset_right = 604.0
 offset_bottom = 366.0
 
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=353869913]
+tile_map_data = PackedByteArray("AAAOAAkAAAAAAAEAAAAOAAoAAAAAAAIAAAAPAAgAAAABAAAAAAAPAAkAAAABAAEAAAAPAAoAAAABAAIAAAAPAAsAAAABAAMAAAAQAAgAAAACAAAAAAAQAAkAAAACAAEAAAAQAAoAAAACAAIAAAAQAAsAAAACAAMAAAAWAAkAAAAAAAEAAAAWAAoAAAAAAAIAAAAXAAgAAAABAAAAAAAXAAkAAAABAAEAAAAXAAoAAAABAAIAAAAXAAsAAAABAAMAAAAYAAgAAAACAAAAAAAYAAkAAAACAAEAAAAYAAoAAAACAAIAAAAYAAsAAAACAAMAAAAfAAkAAAAAAAEAAAAfAAoAAAAAAAIAAAAgAAgAAAABAAAAAAAgAAkAAAABAAEAAAAgAAoAAAABAAIAAAAgAAsAAAABAAMAAAAhAAgAAAACAAAAAAAhAAkAAAACAAEAAAAhAAoAAAACAAIAAAAhAAsAAAACAAMAAAAGAAkAAAAAAAEAAAAGAAoAAAAAAAIAAAAHAAgAAAABAAAAAAAHAAkAAAABAAEAAAAHAAoAAAABAAIAAAAHAAsAAAABAAMAAAAIAAgAAAACAAAAAAAIAAkAAAACAAEAAAAIAAoAAAACAAIAAAAIAAsAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_vximg")
+
+[node name="WallArt" type="Area2D" parent="." unique_id=246809332]
+position = Vector2(230, 270)
+collision_layer = 16
+script = ExtResource("13_vximg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallArt" unique_id=422113026]
+position = Vector2(22, 8.5)
+shape = SubResource("RectangleShape2D_vximg")
+
+[node name="WallArtInteract" type="Area2D" parent="WallArt" unique_id=1549822921]
+collision_layer = 16
+script = ExtResource("4_urco1")
+dialogue_resource = ExtResource("13_7n4px")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallArt/WallArtInteract" unique_id=1874734325]
+position = Vector2(31, 7.5)
+shape = SubResource("RectangleShape2D_u82jn")
+
+[node name="Front Exit" type="Area2D" parent="." unique_id=1995631737]
+position = Vector2(-8, 169)
+collision_layer = 64
+script = ExtResource("15_u82jn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Exit" unique_id=1291883121]
+position = Vector2(1, 68)
+shape = SubResource("RectangleShape2D_cbi6v")
+
 [connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
 [connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]
 [connection signal="body_entered" from="Desk/Desk_Interact" to="Desk" method="_on_desk_interact_body_entered"]
 [connection signal="body_exited" from="Desk/Desk_Interact" to="Desk" method="_on_desk_interact_body_exited"]
+[connection signal="body_entered" from="WallArt/WallArtInteract" to="WallArt" method="_on_wall_art_interact_body_entered"]
+[connection signal="body_exited" from="WallArt/WallArtInteract" to="WallArt" method="_on_wall_art_interact_body_exited"]
+[connection signal="body_entered" from="Front Exit" to="Front Exit" method="_on_body_entered"]

@@ -60,13 +60,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v820v"]
-size = Vector2(42, 64)
+size = Vector2(42, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jsm"]
 size = Vector2(64, 160)
 
 [node name="Player" type="CharacterBody2D" unique_id=1121856085 groups=["Player"]]
-collision_mask = 62
+collision_mask = 126
 script = ExtResource("1_ufort")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=19914070]
@@ -75,11 +75,11 @@ animation = &"walking"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698855606]
-position = Vector2(-4, 55)
+position = Vector2(-4, 57.5)
 shape = SubResource("RectangleShape2D_v820v")
 
-[node name="InteractionArea" type="Area2D" parent="." unique_id=565940498]
-collision_mask = 18
+[node name="InteractionArea" type="Area2D" parent="." unique_id=565940498 groups=["Player"]]
+collision_mask = 82
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1157285457]
 position = Vector2(-3, 6)

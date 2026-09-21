@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dwkm01j22e8p3"]
+
+[ext_resource type="Script" uid="uid://dfc0720r0s0ro" path="res://Scenes/back_to_car_scene.gd" id="1_d5du6"]
+[ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_wquct"]
+[ext_resource type="Texture2D" uid="uid://bs2440eccx7uc" path="res://Sprites/static_car.png" id="3_7884t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbyyy"]
+size = Vector2(310, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eqae"]
+size = Vector2(710, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2dcu"]
+size = Vector2(50, 178)
+
+[node name="BackToCarScene" type="Node2D" unique_id=1263559294]
+script = ExtResource("1_d5du6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1866796433]
+offset_right = 638.0
+offset_bottom = 358.0
+color = Color(0.26666668, 0.58431375, 0.83137256, 1)
+
+[node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_wquct")]
+z_index = 1
+position = Vector2(517, 230)
+
+[node name="Car" type="Area2D" parent="." unique_id=1520403411]
+position = Vector2(53, 245)
+
+[node name="Sprite2D" type="Sprite2D" parent="Car" unique_id=131003448]
+texture = ExtResource("3_7884t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car" unique_id=2116427329]
+position = Vector2(97, -7)
+shape = SubResource("RectangleShape2D_hbyyy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1585880999]
+collision_layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=164409376]
+offset_left = 1.0
+offset_top = 318.0
+offset_right = 688.0
+offset_bottom = 358.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=240671846]
+position = Vector2(355, 338)
+shape = SubResource("RectangleShape2D_0eqae")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=498247730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1517539341]
+position = Vector2(621, 228)
+shape = SubResource("RectangleShape2D_q2dcu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

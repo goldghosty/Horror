@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dxpp84lj0kl6r" path="res://Scripts/dome_entrance.gd" id="8_xxpmx"]
 [ext_resource type="Script" uid="uid://bsp7mxefyt5e0" path="res://Scenes/camera_2d.gd" id="10_g6vop"]
 [ext_resource type="Texture2D" uid="uid://c2ej0ts4cwhen" path="res://Sprites/new_fences.png" id="11_6rpjh"]
+[ext_resource type="Script" uid="uid://bws0psnnt4x5b" path="res://Scenes/pyramid_entrance.gd" id="12_lxip5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iacmt"]
 texture = ExtResource("3_g6vop")
@@ -689,6 +690,9 @@ sources/3 = SubResource("TileSetAtlasSource_6rpjh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rbi2"]
 size = Vector2(37, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jox3x"]
+size = Vector2(37, 22)
+
 [node name="OutdoorSceneTwo" type="Node2D" unique_id=1912264767]
 script = ExtResource("1_1qoyr")
 
@@ -737,8 +741,18 @@ script = ExtResource("8_xxpmx")
 position = Vector2(-8, -39)
 shape = SubResource("RectangleShape2D_1rbi2")
 
+[node name="PyramidEntrance" type="Area2D" parent="." unique_id=1635747850]
+position = Vector2(371, -188)
+collision_layer = 8
+script = ExtResource("12_lxip5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidEntrance" unique_id=1507153720]
+position = Vector2(-8, -39)
+shape = SubResource("RectangleShape2D_jox3x")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1593109329 node_paths=PackedStringArray("player")]
 script = ExtResource("10_g6vop")
 player = NodePath("../PlayerSmall")
 
 [connection signal="body_entered" from="DomeEntrance" to="DomeEntrance" method="_on_body_entered"]
+[connection signal="body_entered" from="PyramidEntrance" to="PyramidEntrance" method="_on_body_entered"]

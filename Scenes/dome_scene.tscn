@@ -200,6 +200,9 @@ script = ExtResource("15_u82jn")
 position = Vector2(1, 68)
 shape = SubResource("RectangleShape2D_cbi6v")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=361805071]
+position = Vector2(320, 182)
+
 [connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
 [connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]
 [connection signal="body_entered" from="Desk/Desk_Interact" to="Desk" method="_on_desk_interact_body_entered"]

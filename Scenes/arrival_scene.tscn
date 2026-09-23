@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bawvgd22o50q8" path="res://Scenes/friend.tscn" id="3_oh7w4"]
 [ext_resource type="Texture2D" uid="uid://bs2440eccx7uc" path="res://Sprites/static_car.png" id="4_oh7w4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6vky"]
+size = Vector2(150, 160)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eqae"]
 size = Vector2(710, 40)
 
@@ -36,6 +39,8 @@ position = Vector2(53, 245)
 texture = ExtResource("4_oh7w4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car" unique_id=2116427329]
+position = Vector2(59, -8)
+shape = SubResource("RectangleShape2D_a6vky")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1585880999]
 collision_layer = 2

@@ -1,3 +1,53 @@
 [gd_scene format=3 uid="uid://dkxiyfyls8ggt"]
 
+[ext_resource type="Texture2D" uid="uid://xb23wc82vobk" path="res://Sprites/pyramid_inside.png" id="1_88bow"]
+[ext_resource type="Script" uid="uid://cvv5tvp5or7wx" path="res://Scenes/pyramid_scene.gd" id="1_t1hu3"]
+[ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_1eb7x"]
+[ext_resource type="Texture2D" uid="uid://d37gf3rpby2g2" path="res://Sprites/flame.png" id="4_855w5"]
+[ext_resource type="Shader" uid="uid://oj2k4bmmyami" path="res://Scenes/pyramid_scene.gdshader" id="5_asqye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88bow"]
+size = Vector2(650, 39)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6d1"]
+shader = ExtResource("5_asqye")
+shader_parameter/sway_speed = 2.02300009283262
+shader_parameter/sway_strength = 0.042000001995
+shader_parameter/noise_scale = 3.538000120555
+shader_parameter/time_offset = 13.1870006263825
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1sbh"]
+
 [node name="PyramidScene" type="Node2D" unique_id=1934357245]
+script = ExtResource("1_t1hu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133637240]
+texture = ExtResource("1_88bow")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1880504432]
+
+[node name="Floor" type="StaticBody2D" parent="Camera2D" unique_id=108749775]
+position = Vector2(-319, 151)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Floor" unique_id=1202508228]
+position = Vector2(320, 19.5)
+shape = SubResource("RectangleShape2D_88bow")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Floor" unique_id=321956101]
+offset_right = 640.0
+offset_bottom = 35.0
+color = Color(0.5254902, 0.41568628, 0.19215687, 1)
+
+[node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_1eb7x")]
+position = Vector2(-248, 65)
+
+[node name="Flame" type="Area2D" parent="." unique_id=551615155]
+position = Vector2(0, 126)
+
+[node name="Flame" type="Sprite2D" parent="Flame" unique_id=1753067836]
+material = SubResource("ShaderMaterial_qh6d1")
+texture = ExtResource("4_855w5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame" unique_id=853155242]
+shape = SubResource("RectangleShape2D_p1sbh")

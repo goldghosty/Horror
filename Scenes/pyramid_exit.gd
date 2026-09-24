@@ -9,14 +9,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and Global.has_gone_back_to_car == false:
-		await Fader.fade_in()
-		get_tree().change_scene_to_file("res://Scenes/outdoor_scene.tscn")
-	if body.is_in_group("Player") and Global.has_gone_back_to_car == true:
+	if body.is_in_group("Player"):
+		Global.spawn_position = "FromPyramid"
 		await Fader.fade_in()
 		get_tree().change_scene_to_file("res://Scenes/outdoor_scene_two.tscn")

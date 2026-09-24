@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://dkxiyfyls8ggt"]
 
 [ext_resource type="Texture2D" uid="uid://xb23wc82vobk" path="res://Sprites/pyramid_inside.png" id="1_88bow"]
-[ext_resource type="Script" uid="uid://cvv5tvp5or7wx" path="res://Scenes/pyramid_scene.gd" id="1_t1hu3"]
+[ext_resource type="Script" uid="uid://cvv5tvp5or7wx" path="res://Scripts/pyramid_scene.gd" id="1_t1hu3"]
 [ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_1eb7x"]
 [ext_resource type="Texture2D" uid="uid://d37gf3rpby2g2" path="res://Sprites/flame.png" id="4_855w5"]
+[ext_resource type="Texture2D" uid="uid://q088acqkwlw7" path="res://Sprites/firepit.png" id="4_asqye"]
 [ext_resource type="Shader" uid="uid://oj2k4bmmyami" path="res://Scenes/pyramid_scene.gdshader" id="5_asqye"]
+[ext_resource type="Script" uid="uid://lq7ju18fdnkq" path="res://Scenes/pyramid_exit.gd" id="7_asqye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88bow"]
-size = Vector2(650, 39)
+size = Vector2(978, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cetod"]
+size = Vector2(153, 36)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6d1"]
 shader = ExtResource("5_asqye")
@@ -18,32 +23,46 @@ shader_parameter/time_offset = 13.1870006263825
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1sbh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyjhk"]
+size = Vector2(30, 215)
+
 [node name="PyramidScene" type="Node2D" unique_id=1934357245]
 script = ExtResource("1_t1hu3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1880504432]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133637240]
 texture = ExtResource("1_88bow")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1880504432]
-
-[node name="Floor" type="StaticBody2D" parent="Camera2D" unique_id=108749775]
-position = Vector2(-319, 151)
+[node name="Floor" type="StaticBody2D" parent="." unique_id=108749775]
+position = Vector2(-319, 161)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Floor" unique_id=1202508228]
-position = Vector2(320, 19.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1202508228]
+position = Vector2(156, 19.5)
 shape = SubResource("RectangleShape2D_88bow")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/Floor" unique_id=321956101]
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=321956101]
 offset_right = 640.0
 offset_bottom = 35.0
 color = Color(0.5254902, 0.41568628, 0.19215687, 1)
 
 [node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_1eb7x")]
+z_index = 1
 position = Vector2(-248, 65)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1749855367]
+position = Vector2(0, 113)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1089796501]
+texture = ExtResource("4_asqye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1995236037]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_cetod")
+
 [node name="Flame" type="Area2D" parent="." unique_id=551615155]
-position = Vector2(0, 126)
+position = Vector2(0, 69)
 
 [node name="Flame" type="Sprite2D" parent="Flame" unique_id=1753067836]
 material = SubResource("ShaderMaterial_qh6d1")
@@ -51,3 +70,13 @@ texture = ExtResource("4_855w5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame" unique_id=853155242]
 shape = SubResource("RectangleShape2D_p1sbh")
+
+[node name="PyramidExit" type="Area2D" parent="." unique_id=91914215]
+position = Vector2(-325, 10)
+script = ExtResource("7_asqye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidExit" unique_id=1151163080]
+position = Vector2(5, 39.5)
+shape = SubResource("RectangleShape2D_hyjhk")
+
+[connection signal="body_entered" from="PyramidExit" to="PyramidExit" method="_on_body_entered"]

@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	Fader.fade_out()
 	player.animated_sprite_2d.flip_h = true
+	Global.has_gone_back_to_car = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

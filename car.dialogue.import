@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cnesomod3ce5s"
+path="res://.godot/imported/car.dialogue-9edb1e262331456e75ad09971dff88d7.tres"
+
+[deps]
+
+source_file="res://car.dialogue"
+dest_files=["res://.godot/imported/car.dialogue-9edb1e262331456e75ad09971dff88d7.tres"]
+
+[params]
+
+defaults=true

@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dvp4xiwluxmyc" path="res://Sprites/newestdome.png" id="7_qgucq"]
 [ext_resource type="Script" uid="uid://w6d4cgdvqp0p" path="res://Scenes/back_to_car.gd" id="9_xhdy1"]
 [ext_resource type="PackedScene" uid="uid://cttd80juw633v" path="res://Scenes/gate.tscn" id="11_v321p"]
+[ext_resource type="Script" uid="uid://bkcfmsl2tf6tr" path="res://Scenes/gate_dome.gd" id="12_8rji6"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="13_eojrn"]
+[ext_resource type="Resource" uid="uid://dnn43smf55e0v" path="res://gate_dome.dialogue" id="14_kw7v5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iacmt"]
 texture = ExtResource("3_w7joo")
@@ -543,6 +546,9 @@ size = Vector2(37, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3rk8"]
 size = Vector2(48, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5dln"]
+size = Vector2(46, 37)
+
 [node name="OutdoorScene" type="Node2D" unique_id=1912264767]
 script = ExtResource("1_1vmot")
 
@@ -597,7 +603,20 @@ shape = SubResource("RectangleShape2D_t3rk8")
 
 [node name="GateDome" parent="." unique_id=86943712 instance=ExtResource("11_v321p")]
 position = Vector2(200, -136)
-script = null
+script = ExtResource("12_8rji6")
+
+[node name="GateInteract" type="Area2D" parent="GateDome" unique_id=1338609453]
+collision_layer = 2
+script = ExtResource("13_eojrn")
+dialogue_resource = ExtResource("14_kw7v5")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GateDome/GateInteract" unique_id=1106660229]
+position = Vector2(-1, 16.5)
+shape = SubResource("RectangleShape2D_i5dln")
 
 [connection signal="body_entered" from="DomeEntrance" to="DomeEntrance" method="_on_body_entered"]
 [connection signal="body_entered" from="BackToCar" to="BackToCar" method="_on_body_entered"]
+[connection signal="body_entered" from="GateDome/GateInteract" to="GateDome" method="_on_gate_interact_body_entered"]
+[connection signal="body_exited" from="GateDome/GateInteract" to="GateDome" method="_on_gate_interact_body_exited"]

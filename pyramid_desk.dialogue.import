@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dhg8v0djab45i"
+path="res://.godot/imported/pyramid_desk.dialogue-14aee653c96cb1420574fe21e8c51674.tres"
+
+[deps]
+
+source_file="res://pyramid_desk.dialogue"
+dest_files=["res://.godot/imported/pyramid_desk.dialogue-14aee653c96cb1420574fe21e8c51674.tres"]
+
+[params]
+
+defaults=true

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7knrjgw43kwg" path="res://Sprites/walk_down.png" id="3_517sf"]
 [ext_resource type="Texture2D" uid="uid://dwx1g3w3rlbkl" path="res://Sprites/small_walk.png" id="3_m0nck"]
 [ext_resource type="Texture2D" uid="uid://clq2avxf44rf6" path="res://Sprites/walk_up.png" id="4_c7r5q"]
+[ext_resource type="FontFile" uid="uid://dqcreh7iywue0" path="res://Fonts/Perfect DOS VGA 437.ttf" id="6_517sf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlqk1"]
 atlas = ExtResource("2_m0nck")
@@ -154,6 +155,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v820v"]
 size = Vector2(18, 62)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7r5q"]
+size = Vector2(18, 28)
+
 [node name="PlayerSmall" type="CharacterBody2D" unique_id=1121856085 groups=["Player"]]
 collision_mask = 14
 script = ExtResource("1_n0aqt")
@@ -166,3 +170,22 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698855606]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_v820v")
+
+[node name="InteractionAreaSmall" type="Area2D" parent="." unique_id=971722513]
+collision_mask = 82
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaSmall" unique_id=149844066]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_c7r5q")
+
+[node name="Label" type="Label" parent="." unique_id=178559926]
+visible = false
+offset_left = 9.0
+offset_top = -36.0
+offset_right = 18.0
+offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("6_517sf")
+text = "?"
+
+[connection signal="area_entered" from="InteractionAreaSmall" to="." method="_on_interaction_area_small_area_entered"]
+[connection signal="area_exited" from="InteractionAreaSmall" to="." method="_on_interaction_area_small_area_exited"]

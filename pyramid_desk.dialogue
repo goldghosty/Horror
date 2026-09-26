@@ -1,0 +1,26 @@
+~ start
+A red book with gold markings on it, a tassled bookmark hanging out the edge.
+And a knife. Just great.
+~ menu
+if Global.has_knife == false
+	- Open the book
+		You turn the page to where the bookmark is holding a place.
+		Marked passage: A good offering requires sacrifice.
+		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
+		Marked: Each of them burn just as brightly!
+		You leaf through the rest of the book but it's all just blank pages.
+	- Take the knife
+		There's nothing special about the knife on the surface, but it seems very sharp.
+		I really hope I don't need this, but it's coming with me.
+		set Global.has_knife = true
+	=> menu
+if Global.has_knife == true
+	- Open the book
+		You turn the page to where the bookmark is holding a place.
+		Marked passage: A good offering requires sacrifice.
+		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
+		Marked: Each of them burn just as brightly!
+		You leaf through the rest of the book but it's all just blank pages.
+		=> END
+
+=> END

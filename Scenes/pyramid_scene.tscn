@@ -6,13 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://d37gf3rpby2g2" path="res://Sprites/flame.png" id="4_855w5"]
 [ext_resource type="Texture2D" uid="uid://q088acqkwlw7" path="res://Sprites/firepit.png" id="4_asqye"]
 [ext_resource type="Shader" uid="uid://oj2k4bmmyami" path="res://Scenes/pyramid_scene.gdshader" id="5_asqye"]
+[ext_resource type="Script" uid="uid://dvwejidvgiisg" path="res://Scripts/sign.gd" id="5_wx8gu"]
+[ext_resource type="Texture2D" uid="uid://bksyqgkfhslla" path="res://Sprites/sign.png" id="6_413kl"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="7_ad6to"]
 [ext_resource type="Script" uid="uid://lq7ju18fdnkq" path="res://Scenes/pyramid_exit.gd" id="7_asqye"]
+[ext_resource type="Resource" uid="uid://bw1xrmbxuim4n" path="res://dome_sign.dialogue" id="8_qa4x1"]
+[ext_resource type="Script" uid="uid://3h64wir5eujr" path="res://Scenes/pyramid_desk.gd" id="12_413kl"]
+[ext_resource type="Texture2D" uid="uid://bvy8c50babjdl" path="res://Sprites/book_table.png" id="13_xxp7f"]
+[ext_resource type="Resource" uid="uid://dhg8v0djab45i" path="res://pyramid_desk.dialogue" id="14_ad6to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88bow"]
 size = Vector2(978, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cetod"]
 size = Vector2(153, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gholn"]
+size = Vector2(49, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_neo0i"]
+size = Vector2(57, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6d1"]
 shader = ExtResource("5_asqye")
@@ -25,6 +38,12 @@ shader_parameter/time_offset = 13.1870006263825
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyjhk"]
 size = Vector2(30, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oipkp"]
+size = Vector2(89, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx8gu"]
+size = Vector2(56, 131)
 
 [node name="PyramidScene" type="Node2D" unique_id=1934357245]
 script = ExtResource("1_t1hu3")
@@ -51,15 +70,37 @@ color = Color(0.5254902, 0.41568628, 0.19215687, 1)
 z_index = 1
 position = Vector2(-248, 65)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1749855367]
+[node name="Firepit" type="Area2D" parent="." unique_id=1749855367]
 position = Vector2(0, 113)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1089796501]
+[node name="Sprite2D" type="Sprite2D" parent="Firepit" unique_id=1089796501]
 texture = ExtResource("4_asqye")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1995236037]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Firepit" unique_id=1995236037]
 position = Vector2(0.5, -8)
 shape = SubResource("RectangleShape2D_cetod")
+
+[node name="Sign" type="Area2D" parent="." unique_id=521063825]
+position = Vector2(-163, 84)
+script = ExtResource("5_wx8gu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=891476391]
+texture = ExtResource("6_413kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign" unique_id=1016289440]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_gholn")
+
+[node name="ReadSign" type="Area2D" parent="Sign" unique_id=925657417]
+collision_layer = 16
+script = ExtResource("7_ad6to")
+dialogue_resource = ExtResource("8_qa4x1")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/ReadSign" unique_id=2023221000]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_neo0i")
 
 [node name="Flame" type="Area2D" parent="." unique_id=551615155]
 position = Vector2(0, 69)
@@ -72,11 +113,38 @@ texture = ExtResource("4_855w5")
 shape = SubResource("RectangleShape2D_p1sbh")
 
 [node name="PyramidExit" type="Area2D" parent="." unique_id=91914215]
-position = Vector2(-325, 10)
+position = Vector2(-335, 10)
 script = ExtResource("7_asqye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidExit" unique_id=1151163080]
 position = Vector2(5, 39.5)
 shape = SubResource("RectangleShape2D_hyjhk")
 
+[node name="PyramidDesk" type="StaticBody2D" parent="." unique_id=1147068212]
+position = Vector2(222, 90)
+collision_layer = 16
+script = ExtResource("12_413kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="PyramidDesk" unique_id=46204808]
+texture = ExtResource("13_xxp7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidDesk" unique_id=1693323068]
+position = Vector2(-4.5, -43)
+shape = SubResource("RectangleShape2D_oipkp")
+
+[node name="PyramidDeskInteract" type="Area2D" parent="PyramidDesk" unique_id=720843014]
+collision_layer = 16
+script = ExtResource("7_ad6to")
+dialogue_resource = ExtResource("14_ad6to")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidDesk/PyramidDeskInteract" unique_id=1445120507]
+position = Vector2(-41, 1.5)
+shape = SubResource("RectangleShape2D_wx8gu")
+
+[connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
+[connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]
 [connection signal="body_entered" from="PyramidExit" to="PyramidExit" method="_on_body_entered"]
+[connection signal="body_entered" from="PyramidDesk/PyramidDeskInteract" to="PyramidDesk" method="_on_pyramid_desk_interact_body_entered"]
+[connection signal="body_exited" from="PyramidDesk/PyramidDeskInteract" to="PyramidDesk" method="_on_pyramid_desk_interact_body_exited"]

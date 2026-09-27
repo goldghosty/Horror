@@ -1,0 +1,14 @@
+~ start
+if Global.burnt_offering == false
+	Sign: Hello!
+	Sign: Where oh where could Jo be?
+	Sign: Leave an offering to find the next key.
+	Holy shit.
+	This isn't funny.
+if Global.burnt_offering == true
+	Sign: Hello!
+	Sign: Thank you for your offering!
+	Sign: You may now proceed to the next area!
+	This is a prank.
+	Someone is pranking me, right?
+=> END

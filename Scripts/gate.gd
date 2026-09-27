@@ -4,7 +4,7 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.has_been_in_pyramid == true:
+	if Global.burnt_offering == true:
 		animated_sprite_2d.play("open")
 		collision_shape_2d.set_deferred("disabled", true)
 	else:

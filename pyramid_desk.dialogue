@@ -1,6 +1,7 @@
 ~ start
 A red book with gold markings on it, a tassled bookmark hanging out the edge.
-And a knife. Just great.
+if Global.has_knife == false
+	And a knife. Just great.
 ~ menu
 if Global.has_knife == false
 	- Open the book
@@ -9,6 +10,7 @@ if Global.has_knife == false
 		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
 		Marked: Each of them burn just as brightly!
 		You leaf through the rest of the book but it's all just blank pages.
+		set Global.read_book = true
 	- Take the knife
 		There's nothing special about the knife on the surface, but it seems very sharp.
 		I really hope I don't need this, but it's coming with me.
@@ -21,6 +23,7 @@ if Global.has_knife == true
 		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
 		Marked: Each of them burn just as brightly!
 		You leaf through the rest of the book but it's all just blank pages.
+		set Global.read_book = true
 		=> END
 
 => END

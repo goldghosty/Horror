@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dbba6ye7ct207"
+path="res://.godot/imported/pyramid_sign.dialogue-46eae913cb71af16b84c8a452204fd19.tres"
+
+[deps]
+
+source_file="res://pyramid_sign.dialogue"
+dest_files=["res://.godot/imported/pyramid_sign.dialogue-46eae913cb71af16b84c8a452204fd19.tres"]
+
+[params]
+
+defaults=true

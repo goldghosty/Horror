@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://ch1x2vgihfelb"
+path="res://.godot/imported/firepit.dialogue-7dd7a6d59f34c7bb6cccf18408047750.tres"
+
+[deps]
+
+source_file="res://firepit.dialogue"
+dest_files=["res://.godot/imported/firepit.dialogue-7dd7a6d59f34c7bb6cccf18408047750.tres"]
+
+[params]
+
+defaults=true

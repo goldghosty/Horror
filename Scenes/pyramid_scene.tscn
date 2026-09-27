@@ -4,14 +4,18 @@
 [ext_resource type="Script" uid="uid://cvv5tvp5or7wx" path="res://Scripts/pyramid_scene.gd" id="1_t1hu3"]
 [ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_1eb7x"]
 [ext_resource type="Texture2D" uid="uid://d37gf3rpby2g2" path="res://Sprites/flame.png" id="4_855w5"]
+[ext_resource type="Script" uid="uid://dpv12tasyfsx" path="res://Scenes/firepit.gd" id="4_ad6to"]
 [ext_resource type="Texture2D" uid="uid://q088acqkwlw7" path="res://Sprites/firepit.png" id="4_asqye"]
 [ext_resource type="Shader" uid="uid://oj2k4bmmyami" path="res://Scenes/pyramid_scene.gdshader" id="5_asqye"]
 [ext_resource type="Script" uid="uid://dvwejidvgiisg" path="res://Scripts/sign.gd" id="5_wx8gu"]
 [ext_resource type="Texture2D" uid="uid://bksyqgkfhslla" path="res://Sprites/sign.png" id="6_413kl"]
 [ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="7_ad6to"]
 [ext_resource type="Script" uid="uid://lq7ju18fdnkq" path="res://Scenes/pyramid_exit.gd" id="7_asqye"]
-[ext_resource type="Resource" uid="uid://bw1xrmbxuim4n" path="res://dome_sign.dialogue" id="8_qa4x1"]
+[ext_resource type="Resource" uid="uid://ch1x2vgihfelb" path="res://firepit.dialogue" id="7_qa4x1"]
+[ext_resource type="Resource" uid="uid://dbba6ye7ct207" path="res://pyramid_sign.dialogue" id="8_413kl"]
+[ext_resource type="Script" uid="uid://6ynydg163ikf" path="res://Scenes/flame.gd" id="11_xxp7f"]
 [ext_resource type="Script" uid="uid://3h64wir5eujr" path="res://Scenes/pyramid_desk.gd" id="12_413kl"]
+[ext_resource type="Texture2D" uid="uid://c4jdp6y1coe1v" path="res://Sprites/flame_invert.png" id="12_gholn"]
 [ext_resource type="Texture2D" uid="uid://bvy8c50babjdl" path="res://Sprites/book_table.png" id="13_xxp7f"]
 [ext_resource type="Resource" uid="uid://dhg8v0djab45i" path="res://pyramid_desk.dialogue" id="14_ad6to"]
 
@@ -20,6 +24,9 @@ size = Vector2(978, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cetod"]
 size = Vector2(153, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad6to"]
+size = Vector2(118, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gholn"]
 size = Vector2(49, 92)
@@ -72,6 +79,8 @@ position = Vector2(-248, 65)
 
 [node name="Firepit" type="Area2D" parent="." unique_id=1749855367]
 position = Vector2(0, 113)
+collision_layer = 16
+script = ExtResource("4_ad6to")
 
 [node name="Sprite2D" type="Sprite2D" parent="Firepit" unique_id=1089796501]
 texture = ExtResource("4_asqye")
@@ -79,6 +88,17 @@ texture = ExtResource("4_asqye")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Firepit" unique_id=1995236037]
 position = Vector2(0.5, -8)
 shape = SubResource("RectangleShape2D_cetod")
+
+[node name="FirepitInteract" type="Area2D" parent="Firepit" unique_id=389168101]
+collision_layer = 16
+script = ExtResource("7_ad6to")
+dialogue_resource = ExtResource("7_qa4x1")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Firepit/FirepitInteract" unique_id=1725680775]
+position = Vector2(1, 15.5)
+shape = SubResource("RectangleShape2D_ad6to")
 
 [node name="Sign" type="Area2D" parent="." unique_id=521063825]
 position = Vector2(-163, 84)
@@ -94,7 +114,7 @@ shape = SubResource("RectangleShape2D_gholn")
 [node name="ReadSign" type="Area2D" parent="Sign" unique_id=925657417]
 collision_layer = 16
 script = ExtResource("7_ad6to")
-dialogue_resource = ExtResource("8_qa4x1")
+dialogue_resource = ExtResource("8_413kl")
 dialogue_cue = "start"
 metadata/_custom_type_script = "uid://cqcur1rm7433g"
 
@@ -104,6 +124,8 @@ shape = SubResource("RectangleShape2D_neo0i")
 
 [node name="Flame" type="Area2D" parent="." unique_id=551615155]
 position = Vector2(0, 69)
+script = ExtResource("11_xxp7f")
+flame_color = ExtResource("12_gholn")
 
 [node name="Flame" type="Sprite2D" parent="Flame" unique_id=1753067836]
 material = SubResource("ShaderMaterial_qh6d1")
@@ -143,6 +165,8 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 position = Vector2(-41, 1.5)
 shape = SubResource("RectangleShape2D_wx8gu")
 
+[connection signal="body_entered" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_entered"]
+[connection signal="body_exited" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_exited"]
 [connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
 [connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]
 [connection signal="body_entered" from="PyramidExit" to="PyramidExit" method="_on_body_entered"]

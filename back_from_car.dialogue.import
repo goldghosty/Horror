@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cyisahncsh0ro"
+path="res://.godot/imported/back_from_car.dialogue-10652c5fb69d5730986030430c5fdb5a.tres"
+
+[deps]
+
+source_file="res://back_from_car.dialogue"
+dest_files=["res://.godot/imported/back_from_car.dialogue-10652c5fb69d5730986030430c5fdb5a.tres"]
+
+[params]
+
+defaults=true

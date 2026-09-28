@@ -6,7 +6,7 @@ var resource = load("res://test.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Fader.fade_out()
-	if Global.has_been_in_dome:
+	if Global.dome_offering_complete:
 		DialogueManager.show_dialogue_balloon(resource, "start")
 
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bvkbu0838k6ep"
+path="res://.godot/imported/back_to_car_early.dialogue-fc7d3b0a1e6d59aec7398c9d80a6fb92.tres"
+
+[deps]
+
+source_file="res://back_to_car_early.dialogue"
+dest_files=["res://.godot/imported/back_to_car_early.dialogue-fc7d3b0a1e6d59aec7398c9d80a6fb92.tres"]
+
+[params]
+
+defaults=true

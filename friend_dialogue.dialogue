@@ -1,9 +1,9 @@
 ~ start
 if Global.has_met_friend == false
-	Friend: This place is kind of creeping me out. 
-	You: I'll go inside and see if they are actually open.
-	Friend: Okay, I'll just wait here for a sec.
+	Jo This place is giving me weird vibes. 
+	You: I'll go inside and scope it out. It's supposed to be weird! But they don't look very open.
+	Jo: Okay, I'll just wait here for a sec.
 	set Global.has_met_friend = true
 else
-	Friend: Something else you need?
+	Jo: Something else you need?
 => END

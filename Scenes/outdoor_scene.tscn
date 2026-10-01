@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="13_eojrn"]
 [ext_resource type="Resource" uid="uid://dnn43smf55e0v" path="res://gate_dome.dialogue" id="14_kw7v5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iacmt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rji6"]
 texture = ExtResource("3_w7joo")
 2:2/0 = 0
 3:2/0 = 0
@@ -27,7 +27,7 @@ texture = ExtResource("3_w7joo")
 5:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6ev3c"]
-sources/0 = SubResource("TileSetAtlasSource_iacmt")
+sources/0 = SubResource("TileSetAtlasSource_8rji6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acm47"]
 texture = ExtResource("4_1rbi2")

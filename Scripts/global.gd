@@ -12,11 +12,13 @@ var has_gone_back_to_car = false
 var has_knife = false
 var read_book = false
 var burnt_offering = false
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
+func _on_dialogue_started(_resource) -> void:
+	get_tree().paused = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_dialogue_ended(_resource) -> void:
+	get_tree().paused = false

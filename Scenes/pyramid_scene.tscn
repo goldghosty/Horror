@@ -1,23 +1,167 @@
-[gd_scene format=3 uid="uid://dkxiyfyls8ggt"]
+[gd_scene format=4 uid="uid://dkxiyfyls8ggt"]
 
 [ext_resource type="Texture2D" uid="uid://xb23wc82vobk" path="res://Sprites/pyramid_inside.png" id="1_88bow"]
 [ext_resource type="Script" uid="uid://cvv5tvp5or7wx" path="res://Scripts/pyramid_scene.gd" id="1_t1hu3"]
 [ext_resource type="PackedScene" uid="uid://g53d6tqluish" path="res://Scenes/bobcat.tscn" id="2_1eb7x"]
+[ext_resource type="Texture2D" uid="uid://dq8mi2rb35dlm" path="res://Sprites/weird_man_one.png" id="3_neo0i"]
 [ext_resource type="Texture2D" uid="uid://d37gf3rpby2g2" path="res://Sprites/flame.png" id="4_855w5"]
 [ext_resource type="Script" uid="uid://dpv12tasyfsx" path="res://Scenes/firepit.gd" id="4_ad6to"]
 [ext_resource type="Texture2D" uid="uid://q088acqkwlw7" path="res://Sprites/firepit.png" id="4_asqye"]
+[ext_resource type="Texture2D" uid="uid://v64xjnc3i6jc" path="res://Sprites/weird_man_two.png" id="4_oipkp"]
 [ext_resource type="Shader" uid="uid://oj2k4bmmyami" path="res://Scenes/pyramid_scene.gdshader" id="5_asqye"]
-[ext_resource type="Script" uid="uid://dvwejidvgiisg" path="res://Scripts/sign.gd" id="5_wx8gu"]
-[ext_resource type="Texture2D" uid="uid://bksyqgkfhslla" path="res://Sprites/sign.png" id="6_413kl"]
 [ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="7_ad6to"]
 [ext_resource type="Script" uid="uid://lq7ju18fdnkq" path="res://Scenes/pyramid_exit.gd" id="7_asqye"]
 [ext_resource type="Resource" uid="uid://ch1x2vgihfelb" path="res://firepit.dialogue" id="7_qa4x1"]
-[ext_resource type="Resource" uid="uid://dbba6ye7ct207" path="res://pyramid_sign.dialogue" id="8_413kl"]
 [ext_resource type="Script" uid="uid://6ynydg163ikf" path="res://Scenes/flame.gd" id="11_xxp7f"]
 [ext_resource type="Script" uid="uid://3h64wir5eujr" path="res://Scenes/pyramid_desk.gd" id="12_413kl"]
 [ext_resource type="Texture2D" uid="uid://c4jdp6y1coe1v" path="res://Sprites/flame_invert.png" id="12_gholn"]
 [ext_resource type="Texture2D" uid="uid://bvy8c50babjdl" path="res://Sprites/book_table.png" id="13_xxp7f"]
 [ext_resource type="Resource" uid="uid://dhg8v0djab45i" path="res://pyramid_desk.dialogue" id="14_ad6to"]
+[ext_resource type="Resource" uid="uid://c8k0hhegivlw1" path="res://pyramid_mural.dialogue" id="18_xxp7f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfh2b"]
+texture = ExtResource("3_neo0i")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+4:12/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dc518"]
+texture = ExtResource("4_oipkp")
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xbj77"]
+sources/0 = SubResource("TileSetAtlasSource_qfh2b")
+sources/1 = SubResource("TileSetAtlasSource_dc518")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88bow"]
 size = Vector2(978, 39)
@@ -27,12 +171,6 @@ size = Vector2(153, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad6to"]
 size = Vector2(118, 71)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gholn"]
-size = Vector2(49, 92)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_neo0i"]
-size = Vector2(57, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6d1"]
 shader = ExtResource("5_asqye")
@@ -52,6 +190,9 @@ size = Vector2(89, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx8gu"]
 size = Vector2(56, 131)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnrk7"]
+size = Vector2(67, 100.5)
+
 [node name="PyramidScene" type="Node2D" unique_id=1934357245]
 script = ExtResource("1_t1hu3")
 
@@ -59,6 +200,10 @@ script = ExtResource("1_t1hu3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133637240]
 texture = ExtResource("1_88bow")
+
+[node name="WallArt" type="TileMapLayer" parent="." unique_id=1131477153]
+tile_map_data = PackedByteArray("AAD1//f/AAAAAAEAAAD1//j/AAAAAAIAAAD1/wQAAAAAAA4AAAD2//f/AAABAAEAAAD2//j/AAABAAIAAAD2//n/AAABAAMAAAD2//r/AAABAAQAAAD2//v/AAABAAUAAAD2//z/AAABAAYAAAD2//3/AAABAAcAAAD2//7/AAABAAgAAAD2////AAABAAkAAAD2/wAAAAABAAoAAAD2/wEAAAABAAsAAAD2/wIAAAABAAwAAAD2/wMAAAABAA0AAAD2/wQAAAABAA4AAAD3//b/AAACAAAAAAD3//f/AAACAAEAAAD3//j/AAACAAIAAAD3//n/AAACAAMAAAD3//r/AAACAAQAAAD3//v/AAACAAUAAAD3//z/AAACAAYAAAD3//3/AAACAAcAAAD3//7/AAACAAgAAAD3////AAACAAkAAAD3/wAAAAACAAoAAAD3/wEAAAACAAsAAAD3/wIAAAACAAwAAAD3/wMAAAACAA0AAAD3/wQAAAACAA4AAAD4//b/AAADAAAAAAD4//f/AAADAAEAAAD4//j/AAADAAIAAAD4//n/AAADAAMAAAD4//r/AAADAAQAAAD4//v/AAADAAUAAAD4//z/AAADAAYAAAD4//3/AAADAAcAAAD4//7/AAADAAgAAAD4////AAADAAkAAAD4/wAAAAADAAoAAAD5//b/AAAEAAAAAAD5//f/AAAEAAEAAAD5//j/AAAEAAIAAAD5//n/AAAEAAMAAAD5//r/AAAEAAQAAAD5//v/AAAEAAUAAAD5//z/AAAEAAYAAAD5//3/AAAEAAcAAAD5//7/AAAEAAgAAAD5////AAAEAAkAAAD5/wAAAAAEAAoAAAD5/wEAAAAEAAsAAAD5/wIAAAAEAAwAAAD5/wMAAAAEAA0AAAD5/wQAAAAEAA4AAAD6//f/AAAFAAEAAAD6//j/AAAFAAIAAAD6//r/AAAFAAQAAAD6//v/AAAFAAUAAAD6//z/AAAFAAYAAAD6//3/AAAFAAcAAAD6/wMAAAAFAA0AAAD6/wQAAAAFAA4AAAD7//v/AAAGAAUAAAD7//z/AAAGAAYAAAD8//v/AAAHAAUAAAD9//v/AAAIAAUAAAACAPv/AQAAAAUAAAADAPv/AQABAAUAAAAEAPv/AQACAAUAAAAEAPz/AQACAAYAAAAFAPr/AQADAAQAAAAFAPv/AQADAAUAAAAFAPz/AQADAAYAAAAFAP7/AQADAAgAAAAFAP//AQADAAkAAAAFAAAAAQADAAoAAAAFAAEAAQADAAsAAAAFAAIAAQADAAwAAAAFAAMAAQADAA0AAAAFAAQAAQADAA4AAAAGAPf/AQAEAAEAAAAGAPj/AQAEAAIAAAAGAPn/AQAEAAMAAAAGAPr/AQAEAAQAAAAGAPv/AQAEAAUAAAAGAPz/AQAEAAYAAAAGAP3/AQAEAAcAAAAGAP7/AQAEAAgAAAAGAP//AQAEAAkAAAAGAAAAAQAEAAoAAAAGAAEAAQAEAAsAAAAGAAIAAQAEAAwAAAAGAAMAAQAEAA0AAAAGAAQAAQAEAA4AAAAHAPf/AQAFAAEAAAAHAPj/AQAFAAIAAAAHAPn/AQAFAAMAAAAHAPr/AQAFAAQAAAAHAPv/AQAFAAUAAAAHAPz/AQAFAAYAAAAHAP3/AQAFAAcAAAAHAP7/AQAFAAgAAAAHAP//AQAFAAkAAAAHAAAAAQAFAAoAAAAIAPf/AQAGAAEAAAAIAPj/AQAGAAIAAAAIAPn/AQAGAAMAAAAIAPr/AQAGAAQAAAAIAPv/AQAGAAUAAAAIAPz/AQAGAAYAAAAIAP3/AQAGAAcAAAAIAP7/AQAGAAgAAAAIAP//AQAGAAkAAAAIAAAAAQAGAAoAAAAIAAEAAQAGAAsAAAAIAAIAAQAGAAwAAAAIAAMAAQAGAA0AAAAIAAQAAQAGAA4AAAAJAPr/AQAHAAQAAAAJAPv/AQAHAAUAAAAJAPz/AQAHAAYAAAAJAP3/AQAHAAcAAAAJAP7/AQAHAAgAAAAJAP//AQAHAAkAAAAJAAAAAQAHAAoAAAAJAAEAAQAHAAsAAAAJAAIAAQAHAAwAAAAJAAMAAQAHAA0AAAAJAAQAAQAHAA4AAAAKAAQAAQAIAA4AAAA=")
+tile_set = SubResource("TileSet_xbj77")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=108749775]
 position = Vector2(-319, 161)
@@ -75,7 +220,7 @@ color = Color(0.5254902, 0.41568628, 0.19215687, 1)
 
 [node name="Player" parent="." unique_id=1121856085 instance=ExtResource("2_1eb7x")]
 z_index = 1
-position = Vector2(-248, 65)
+position = Vector2(-272, 65)
 
 [node name="Firepit" type="Area2D" parent="." unique_id=1749855367]
 position = Vector2(0, 113)
@@ -99,28 +244,6 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Firepit/FirepitInteract" unique_id=1725680775]
 position = Vector2(1, 15.5)
 shape = SubResource("RectangleShape2D_ad6to")
-
-[node name="Sign" type="Area2D" parent="." unique_id=521063825]
-position = Vector2(-163, 84)
-script = ExtResource("5_wx8gu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=891476391]
-texture = ExtResource("6_413kl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign" unique_id=1016289440]
-position = Vector2(0.5, 2)
-shape = SubResource("RectangleShape2D_gholn")
-
-[node name="ReadSign" type="Area2D" parent="Sign" unique_id=925657417]
-collision_layer = 16
-script = ExtResource("7_ad6to")
-dialogue_resource = ExtResource("8_413kl")
-dialogue_cue = "start"
-metadata/_custom_type_script = "uid://cqcur1rm7433g"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/ReadSign" unique_id=2023221000]
-position = Vector2(-0.5, -7)
-shape = SubResource("RectangleShape2D_neo0i")
 
 [node name="Flame" type="Area2D" parent="." unique_id=551615155]
 position = Vector2(0, 69)
@@ -165,10 +288,21 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 position = Vector2(-41, 1.5)
 shape = SubResource("RectangleShape2D_wx8gu")
 
+[node name="PyramidArtInteract" type="Area2D" parent="." unique_id=1096998251]
+collision_layer = 16
+script = ExtResource("7_ad6to")
+dialogue_resource = ExtResource("18_xxp7f")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PyramidArtInteract" unique_id=595235775]
+position = Vector2(-168.5, 75.75)
+shape = SubResource("RectangleShape2D_nnrk7")
+
 [connection signal="body_entered" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_entered"]
 [connection signal="body_exited" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_exited"]
-[connection signal="body_entered" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_entered"]
-[connection signal="body_exited" from="Sign/ReadSign" to="Sign" method="_on_read_sign_body_exited"]
 [connection signal="body_entered" from="PyramidExit" to="PyramidExit" method="_on_body_entered"]
 [connection signal="body_entered" from="PyramidDesk/PyramidDeskInteract" to="PyramidDesk" method="_on_pyramid_desk_interact_body_entered"]
 [connection signal="body_exited" from="PyramidDesk/PyramidDeskInteract" to="PyramidDesk" method="_on_pyramid_desk_interact_body_exited"]
+[connection signal="body_entered" from="PyramidArtInteract" to="." method="_on_pyramid_art_interact_body_entered"]
+[connection signal="body_exited" from="PyramidArtInteract" to="." method="_on_pyramid_art_interact_body_exited"]

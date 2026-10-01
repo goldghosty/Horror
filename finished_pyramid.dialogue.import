@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cbbh70psmwymy"
+path="res://.godot/imported/finished_pyramid.dialogue-88ddc443b67a3d1419bea641e0b73461.tres"
+
+[deps]
+
+source_file="res://finished_pyramid.dialogue"
+dest_files=["res://.godot/imported/finished_pyramid.dialogue-88ddc443b67a3d1419bea641e0b73461.tres"]
+
+[params]
+
+defaults=true

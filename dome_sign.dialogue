@@ -4,7 +4,6 @@ if Global.dome_offering_complete == true
 	Sign: Your assistance has been noted.
 	You: Wait, WHAT? Who updated that?
 	You: This is so weird, maybe Jo was right. 
-	You: I gotta go tell them about this.
 if Global.dome_offering_complete == false
 	Sign: Hello, we are not here.
 	Sign: Please leave an offering and ring bell.

@@ -4,6 +4,7 @@ extends Node2D
 @onready var spawn_from_dome: Marker2D = $SpawnFromDome
 
 var resource = load("res://back_from_car.dialogue")
+var resource_2 = load("res://finished_pyramid.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Fader.fade_out()
@@ -16,6 +17,8 @@ func _ready() -> void:
 		player_small.animated_sprite_2d.play("walk_down")
 	if Global.has_gone_back_to_car == true and Global.burnt_offering == false:
 		DialogueManager.show_dialogue_balloon(resource, "start")
+	if Global.burnt_offering == true:
+		DialogueManager.show_dialogue_balloon(resource_2, "start")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

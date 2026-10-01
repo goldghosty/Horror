@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c8k0hhegivlw1"
+path="res://.godot/imported/pyramid_mural.dialogue-04fe6606eb2a5ee5f99c11cebc5dda3f.tres"
+
+[deps]
+
+source_file="res://pyramid_mural.dialogue"
+dest_files=["res://.godot/imported/pyramid_mural.dialogue-04fe6606eb2a5ee5f99c11cebc5dda3f.tres"]
+
+[params]
+
+defaults=true

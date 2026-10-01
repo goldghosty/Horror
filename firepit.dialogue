@@ -11,15 +11,17 @@ if Global.read_book == true and Global.burnt_offering == false:
 	I can't play along with this, this is nuts.
 	But I'm so curious.
 	- Offer a lock of hair
-		You take the knife and slowly saw off a small length of hair. 
-		You toss it into the flames.
+		I take the knife and slowly saw off a small length of hair. 
+		I toss it into the flames.
 		set Global.burnt_offering = true
+		What the hell?
 		=> END
 	- Ofer a scrap of clothing
-		You take the knife and gently cut off a piece of your shirt. 
-		You toss it into the flames.
+		I take the knife and gently cut off a piece of my shirt. 
+		I toss it into the flames.
 		set Global.burnt_offering = true
+		What the hell?
 		=> END
 if Global.burnt_offering == true:
-	The fire continues to blaze blue.
+	The fire is now a blazing blue.
 => END

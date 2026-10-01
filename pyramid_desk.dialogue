@@ -3,13 +3,13 @@ A red book with gold markings on it, a tassled bookmark hanging out the edge.
 if Global.has_knife == false
 	And a knife. Just great.
 ~ menu
-if Global.has_knife == false
+if Global.has_knife == false and Global.read_book == false
 	- Open the book
-		You turn the page to where the bookmark is holding a place.
-		Marked passage: A good offering requires sacrifice.
-		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
-		Marked: Each of them burn just as brightly!
-		You leaf through the rest of the book but it's all just blank pages.
+		I guess I'll open it to where the bookmark is holding a place.
+		Marked passage: "A good offering requires sacrifice."
+		Marked passage: "A lock of hair is best at this point in your journey, but a scrap of fabric will also do."
+		Marked passage: "Each of them burn just as brightly!"
+		The rest of the book is all just blank pages.
 		set Global.read_book = true
 	- Take the knife
 		There's nothing special about the knife on the surface, but it seems very sharp.
@@ -18,12 +18,17 @@ if Global.has_knife == false
 	=> menu
 if Global.has_knife == true
 	- Open the book
-		You turn the page to where the bookmark is holding a place.
-		Marked passage: A good offering requires sacrifice.
-		Marked passage: A lock of hair is best at this point in your journey, but a scrap of fabric will also do.
-		Marked: Each of them burn just as brightly!
-		You leaf through the rest of the book but it's all just blank pages.
+		I guess I'll open it to where the bookmark is holding a place.
+		Marked passage: "A good offering requires sacrifice."
+		Marked passage: "A lock of hair is best at this point in your journey, but a scrap of fabric will also do."
+		Marked passage: "Each of them burn just as brightly!"
+		The rest of the book is all just blank pages.
 		set Global.read_book = true
+if Global.read_book == true and Global.has_knife == false
+	- Take the knife
+		There's nothing special about the knife on the surface, but it seems very sharp.
+		I really hope I don't need this, but it's coming with me.
+		set Global.has_knife = true
 		=> END
 
 => END

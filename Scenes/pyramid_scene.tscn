@@ -299,6 +299,20 @@ metadata/_custom_type_script = "uid://cqcur1rm7433g"
 position = Vector2(-168.5, 75.75)
 shape = SubResource("RectangleShape2D_nnrk7")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1480459984]
+offset_left = -144.0
+offset_top = -123.0
+offset_right = -106.0
+offset_bottom = -109.0
+color = Color(0.84313726, 0.52156866, 0.57254905, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=130472301]
+offset_left = 105.0
+offset_top = -123.0
+offset_right = 138.0
+offset_bottom = -109.0
+color = Color(0.84313726, 0.52156866, 0.57254905, 1)
+
 [connection signal="body_entered" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_entered"]
 [connection signal="body_exited" from="Firepit/FirepitInteract" to="Firepit" method="_on_firepit_interact_body_exited"]
 [connection signal="body_entered" from="PyramidExit" to="PyramidExit" method="_on_body_entered"]

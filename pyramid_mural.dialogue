@@ -1,5 +1,9 @@
 ~ start
-These paintings are so weird, but I kind of like them.
-There's the strange symbol again.
-Like a glimpse into another world.
+if Global.burnt_offering == false
+	These paintings are so weird, but I kind of like them.
+	There's the strange symbol again.
+	Like a glimpse into another world.
+if Global.burnt_offering == true
+	They didn't have eyes before, did they??
+	I need to find Jo. Now.
 => END

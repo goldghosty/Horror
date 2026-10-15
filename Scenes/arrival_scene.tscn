@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bawvgd22o50q8" path="res://Scenes/friend.tscn" id="3_oh7w4"]
 [ext_resource type="Texture2D" uid="uid://bs2440eccx7uc" path="res://Sprites/static_car.png" id="4_oh7w4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6vky"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rluwx"]
 texture = ExtResource("2_rluwx")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -27,7 +27,7 @@ texture = ExtResource("2_rluwx")
 
 [sub_resource type="TileSet" id="TileSet_157b0"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_a6vky")
+sources/0 = SubResource("TileSetAtlasSource_rluwx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6vky"]
 size = Vector2(150, 160)
